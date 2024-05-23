@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 from math import isqrt, gcd
-from functools import cache, reduce
+from functools import reduce
 from itertools import takewhile
 from operator import mul
 
 def coprime(a: int, b: int) -> bool:
     return gcd(a,b) == 1
 
-@cache
 def is_prime(n: int, *, sieve_lvl: int = 4) -> bool:
 
     if n < 2: return False
