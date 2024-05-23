@@ -38,9 +38,19 @@ def is_prime(n: int, *, sieve_lvl: int = 4) -> bool:
 
 # - - - - - - - - - - - - - - - - - - - #
 
+def test_prime(p: int, expected_result: bool) -> None:
+    result = is_prime(p)
+    print(f"is_prime({p}) = {result} -> \033[0;",
+          "92mCorrect" if result == expected_result else
+          "91;40mError", "\033[0m", sep='')
+
 def main() -> None:
-    print(is_prime(1234577))
-    print(is_prime(1234567891))
+    test_prime(1234576,    False)
+    test_prime(1234577,     True)
+    test_prime(1234578,    False)
+    test_prime(1234567890, False)
+    test_prime(1234567891,  True)
+    test_prime(1234567892, False)
 
 if __name__ == '__main__':
     main()
