@@ -1,0 +1,38 @@
+#                 _ _       _
+#     _ __  _   _| (_)_ __ | |_ _ __ ___
+#    | '_ \| | | | | | '_ \| __| '__/ __|
+#   _| |_) | |_| | | | | | | |_| | | (__
+#  (_| .__/ \__, |_|_|_| |_|\__|_|  \___|
+#    |_|    |___/
+
+[MASTER]
+jobs = 4
+
+[MESSAGES CONTROL]
+disable = missing-docstring
+
+[REPORTS]
+output-format = colorized
+
+#--------------------------------#
+
+[BASIC]
+# By default these identifiers have to be
+# at least 3 characters long, change that
+function-rgx = [a-z_][a-z0-9_]{,30}$
+variable-rgx = [a-z_][a-z0-9_]{,30}$
+argument-rgx = [a-z_][a-z0-9_]{,30}$
+method-rgx   = [a-z_][a-z0-9_]{,30}$
+attr-rgx     = [a-z_][a-z0-9_]{,30}$
+
+#--------------------------------#
+
+[FORMAT]
+max-line-length = 80
+indent-string = '    '
+
+# Allow compact if-return statements
+single-line-if-stmt = yes
+
+# Warn about Windows-style line breaks
+expected-line-ending-format = LF
