@@ -1,0 +1,79 @@
+#!/usr/bin/env -S sbcl --script
+
+(defun is-prime (n &optional (sieve-level '6))
+  (labels (
+      (coprime (a b) (= (gcd a b) 1))
+      (divides-n (x) (= (mod n x) 0))
+    )
+
+    (let* (
+      (primes '(2 3 5 7 11 13 17 19 23 29))
+      (k (reduce '* (subseq primes 0 sieve-level)))
+    )
+    (cond
+      ((< n 2) nil)
+      ((member n primes) t)
+      ((> (gcd n k) 1) nil)
+      (t (let (
+             (root (isqrt n))
+             (sieve (remove-if-not (lambda (i) (coprime k i))
+                    (loop for i from 5 to (+ k 1) collect i)))
+           )
+
+           ; First check all blocks that fall whole within the root
+           (loop for i from k to root by k do
+               (if (some #'divides-n sieve)
+                 (return nil)
+               )
+               (mapcar (lambda (x) (incf x k)) sieve)
+           )
+
+           ; The final fine-grained iteration
+           (notany #'divides-n
+             (loop for x in sieve
+              while (<= x root) collect x)
+           )
+         )
+      )
+    ))
+  )
+)
+
+
+;---------------- MAIN ----------------;
+
+(defun main ()
+
+  (labels (
+    (test-prime (p expected-result)
+      (let ((result (is-prime p)))
+        (format t "(is-prime ~D) = ~A -> ~C[0;~A~C[0m~%"
+          p (is-prime p) #\Esc (if (equal result expected-result)
+          "92mCorrect" "91;40mError") #\Esc)
+      )
+    ))
+
+    (test-prime 27         nil)
+    (test-prime 29           t)
+
+    (test-prime 1234576    nil)
+    (test-prime 1234577      t)
+    (test-prime 1234578    nil)
+
+    (test-prime 1234567890 nil)
+    (test-prime 1234567891   t)
+    (test-prime 1234567892 nil)
+
+    (test-prime 18014398509481930 nil)
+    (test-prime 18014398509481931   t)
+    (test-prime 18014398509481937 nil)
+
+    (test-prime 18014398509481950 nil)
+    (test-prime 18014398509481951   t)
+    (test-prime 18014398509481957 nil)
+
+    ;(test-prime 9223372036854775783 nil)
+  )
+)
+
+(main)
