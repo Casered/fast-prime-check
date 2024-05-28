@@ -1,0 +1,336 @@
+#          _ _   _
+#     __ _(_) |_(_) __ _ _ __   ___  _ __ ___
+#    / _` | | __| |/ _` | '_ \ / _ \| '__/ _ \
+#   | (_| | | |_| | (_| | | | | (_) | | |  __/
+#  (_)__, |_|\__|_|\__, |_| |_|\___/|_|  \___|
+#    |___/         |___/
+#
+
+# Ignore all files without extensions
+*
+!*.*
+!*/
+
+# Unignore the makefiles
+!GNUmakefile
+!Makefile
+!makefile
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+# Custom trash files and folders
+# (for chosen prefixes/suffixes)
+
+# Just the words:
+[Bb]ackup
+[Ii]gnore
+[Tt]rash
+[Ll]ater
+[Ii]nne
+[Ss]yff
+OLD
+BAD
+bad
+
+# Entries starting with:
+[Bb]ackup[0-9._-]*
+[Ii]gnore[0-9._-]*
+[Tt]rash[0-9._-]*
+[Ll]ater[0-9._-]*
+[Ii]nne[0-9._-]*
+[Ss]yff[0-9._-]*
+OLD[0-9._-]*
+BAD[0-9._-]*
+bad[0-9._-]*
+
+# Entries ending with:
+*[._-][Bb]ackup
+*[._-][Ii]gnore
+*[._-][Tt]rash
+*[._-][Ll]ater
+*[._-][Ii]nne
+*[._-][Ss]yff
+*[._-]OLD
+*[._-]BAD
+*[._-]bad
+*[._-]bak
+
+# Infixes (also final nums):
+*[._-][Bb]ackup[0-9._-]*
+*[._-][Ii]gnore[0-9._-]*
+*[._-][Tt]rash[0-9._-]*
+*[._-][Ll]ater[0-9._-]*
+*[._-][Ii]nne[0-9._-]*
+*[._-][Ss]yff[0-9._-]*
+*[._-]OLD[0-9._-]*
+*[._-]BAD[0-9._-]*
+*[._-]bad[0-9._-]*
+*[._-]bak[0-9._-]*
+
+#Test/
+#test/
+#Help/
+#help/
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+### Linux ###
+
+# Temporary files
+*~
+*.swp
+
+# Misc.
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+### C/C++ ###
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Compiled Static libraries
+*.lai
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+### Ada ###
+
+# Object file
+#*.o (duplicate)
+
+# Ada Library Information
+*.ali
+
+# Temporary GPRbuild files
+*.ad[bs].stderr
+*.ad[bs].stdout
+b~*.ad[bs]
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+### Java ###
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Virtual machine crash logs
+hs_err_pid*
+replay_pid*
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+### Go ###
+
+# Binaries for programs and plugins
+*.exe~
+#*.exe
+#*.dll
+#*.so
+#*.dylib
+#^(duplicate entries!)
+
+# Test binary, built with `go test -c`
+*.test
+
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+# Go workspace file
+go.work
+
+### Go Patch ###
+/vendor/
+/Godeps/
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+### Haskell ###
+
+dist
+dist-*
+cabal-dev
+#*.o (duplicate)
+*.hi
+*.hie
+*.chi
+*.chs.h
+*.dyn_o
+*.dyn_hi
+.hpc
+.hsenv
+.cabal-sandbox/
+cabal.sandbox.config
+*.prof
+*.aux
+*.hp
+*.eventlog
+.stack-work/
+cabal.project.local
+cabal.project.local~
+.HTF/
+.ghc.environment.*
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+### Python ###
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# PyEnv version
+#.python-version
+
+# PEP 582
+__pypackages__/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+### Vim ###
+
+# Swap
+[._]*.s[a-v][a-z]
+[._]s[a-rt-v][a-z]
+!*.svg # comment out if unnecessary
+[._]ss[a-gi-z]
+[._]*.sw[a-p]
+[._]sw[a-p]
+
+# Session
+Session.vim
+Sessionx.vim
+
+# Temporary
+.netrwhist
+
+# Auto-generated tag files
+tags
+
+# Persistent undo
+[._]*.un~
+
+# Created with the help of
+# https://www.toptal.com/developers/gitignore/api/linux,c,c++,ada,java,go,haskell,python,vim
